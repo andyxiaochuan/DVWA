@@ -112,15 +112,15 @@ const translations = {
       difficulty: "Beginner → Intermediate"
     },
     ddosLearningPath: {
-      title: "🌪️ DDoS攻击",
-      description: "学习分布式拒绝服务攻击如何使服务器过载",
+      title: "🌪️ DDoS Attack",
+      description: "Learn how distributed denial of service attacks overload servers",
       features: [
-        "理解DDoS攻击原理",
-        "学习不同类型的DDoS攻击",
-        "掌握流量模拟技术",
-        "实践DDoS缓解策略"
+        "Understand DDoS attack principles",
+        "Learn different types of DDoS attacks",
+        "Master traffic simulation techniques",
+        "Practice DDoS mitigation strategies"
       ],
-      difficulty: "中级 → 高级"
+      difficulty: "Intermediate → Advanced"
     },
 
     // SQL Injection
@@ -610,7 +610,7 @@ const translations = {
 };
 
 // Language context
-let currentLanguage = 'zh';
+let currentLanguage = 'en';
 
 export const setLanguage = (lang) => {
   if (translations[lang]) {
