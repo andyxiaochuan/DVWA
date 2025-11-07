@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { t } from '../i18n';
 
 function PracticeChallenges() {
   const [challenges, setChallenges] = useState([]);
@@ -137,9 +138,9 @@ function PracticeChallenges() {
       
       setUserProgress(newProgress);
       localStorage.setItem('dvma-challenge-progress', JSON.stringify(newProgress));
-      alert('🎉 挑战完成！');
+      alert(t('challengeComplete'));
     } else {
-      alert('❌ 挑战未完成，请检查你的解决方案');
+      alert(t('challengeFailed'));
     }
   };
 
@@ -164,23 +165,23 @@ function PracticeChallenges() {
 
   return (
     <div className="practice-challenges">
-      <h2>🏆 实战挑战</h2>
+      <h2>{t('practiceChallengesTitle')}</h2>
       
       <div className="progress-overview">
         <div className="progress-card">
-          <h3>学习进度</h3>
+          <h3>{t('learningProgress')}</h3>
           <div className="progress-stats">
             <div className="stat">
               <span className="stat-value">{getCompletedCount()}</span>
-              <span className="stat-label">已完成挑战</span>
+              <span className="stat-label">{t('completedChallenges')}</span>
             </div>
             <div className="stat">
               <span className="stat-value">{getTotalPoints()}</span>
-              <span className="stat-label">总积分</span>
+              <span className="stat-label">{t('totalPoints')}</span>
             </div>
             <div className="stat">
               <span className="stat-value">{getProgressPercentage()}%</span>
-              <span className="stat-label">完成度</span>
+              <span className="stat-label">{t('completionRate')}</span>
             </div>
           </div>
           <div className="progress-bar">
@@ -215,12 +216,12 @@ function PracticeChallenges() {
               <p className="challenge-description">{challenge.description}</p>
               
               <div className="challenge-objective">
-                <strong>目标：</strong> {challenge.objective}
+                <strong>{t('objective')}：</strong> {challenge.objective}
               </div>
 
               {!isAvailable && (
                 <div className="prerequisites">
-                  <strong>前置要求：</strong>
+                  <strong>{t('prerequisites')}：</strong>
                   {challenge.prerequisites.map(prereq => (
                     <span key={prereq} className="prereq">
                       {challenges.find(c => c.id === prereq)?.title}
@@ -235,16 +236,16 @@ function PracticeChallenges() {
                     className="btn btn-primary"
                     onClick={() => setSelectedChallenge(challenge)}
                   >
-                    开始挑战
+                    {t('startChallenge')}
                   </button>
                 </div>
               )}
 
               {isCompleted && (
                 <div className="challenge-completed">
-                  <span className="completed-badge">✅ 已完成</span>
+                  <span className="completed-badge">{t('challengeCompleted')}</span>
                   <div className="completion-time">
-                    完成时间: {new Date(userProgress[challenge.id].completedAt).toLocaleString()}
+                    {t('completionTime')}: {new Date(userProgress[challenge.id].completedAt).toLocaleString()}
                   </div>
                 </div>
               )}
@@ -268,16 +269,16 @@ function PracticeChallenges() {
             
             <div className="modal-body">
               <div className="challenge-info">
-                <p><strong>描述：</strong> {selectedChallenge.description}</p>
-                <p><strong>目标：</strong> {selectedChallenge.objective}</p>
-                <p><strong>难度：</strong> <span className={`difficulty ${selectedChallenge.difficulty}`}>
+                <p><strong>{t('description')}：</strong> {selectedChallenge.description}</p>
+                <p><strong>{t('objective')}：</strong> {selectedChallenge.objective}</p>
+                <p><strong>{t('difficulty')}：</strong> <span className={`difficulty ${selectedChallenge.difficulty}`}>
                   {selectedChallenge.difficulty}
                 </span></p>
-                <p><strong>积分：</strong> +{selectedChallenge.points}分</p>
+                <p><strong>{t('points')}：</strong> +{selectedChallenge.points}{t('points')}</p>
               </div>
 
               <div className="hints-section">
-                <h4>💡 提示</h4>
+                <h4>{t('hints')}</h4>
                 <ul>
                   {selectedChallenge.hints.map((hint, index) => (
                     <li key={index}>{hint}</li>
@@ -286,10 +287,10 @@ function PracticeChallenges() {
               </div>
 
               <div className="solution-input">
-                <h4>输入你的解决方案</h4>
+                <h4>{t('enterSolution')}</h4>
                 <input
                   type="text"
-                  placeholder="在这里输入你的攻击载荷..."
+                  placeholder={t('enterSolution') + '...'}
                   className="solution-field"
                   id={`solution-${selectedChallenge.id}`}
                 />
@@ -301,7 +302,7 @@ function PracticeChallenges() {
                     setSelectedChallenge(null);
                   }}
                 >
-                  提交解决方案
+                  {t('submitSolution')}
                 </button>
               </div>
             </div>
@@ -310,26 +311,26 @@ function PracticeChallenges() {
       )}
 
       <div className="achievements">
-        <h3>🏅 成就系统</h3>
+        <h3>{t('achievements')}</h3>
         <div className="achievements-grid">
           <div className={`achievement ${getCompletedCount() >= 1 ? 'unlocked' : 'locked'}`}>
             <span className="achievement-icon">🥉</span>
             <div className="achievement-info">
-              <h4>初出茅庐</h4>
+              <h4>{t('firstChallenge')}</h4>
               <p>完成第一个挑战</p>
             </div>
           </div>
           <div className={`achievement ${getCompletedCount() >= 3 ? 'unlocked' : 'locked'}`}>
             <span className="achievement-icon">🥈</span>
             <div className="achievement-info">
-              <h4>渐入佳境</h4>
+              <h4>{t('threeChallenges')}</h4>
               <p>完成3个挑战</p>
             </div>
           </div>
           <div className={`achievement ${getCompletedCount() >= 6 ? 'unlocked' : 'locked'}`}>
             <span className="achievement-icon">🥇</span>
             <div className="achievement-info">
-              <h4>安全专家</h4>
+              <h4>{t('allChallenges')}</h4>
               <p>完成所有挑战</p>
             </div>
           </div>

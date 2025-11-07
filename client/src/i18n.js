@@ -9,6 +9,7 @@ const translations = {
     xss: "XSS",
     idor: "IDOR",
     commandInjection: "Command Injection",
+    ddos: "DDoS",
     secureSearch: "Secure Search",
     welcome: "Welcome",
     warning: "Warning",
@@ -47,7 +48,6 @@ const translations = {
     username: "Username",
     password: "Password",
     role: "Role",
-    description: "Description",
     admin: "Administrator",
     user: "Regular User",
     adminDescription: "Has all permissions, used for testing privilege escalation",
@@ -111,10 +111,20 @@ const translations = {
       ],
       difficulty: "Beginner → Intermediate"
     },
+    ddosLearningPath: {
+      title: "🌪️ DDoS攻击",
+      description: "学习分布式拒绝服务攻击如何使服务器过载",
+      features: [
+        "理解DDoS攻击原理",
+        "学习不同类型的DDoS攻击",
+        "掌握流量模拟技术",
+        "实践DDoS缓解策略"
+      ],
+      difficulty: "中级 → 高级"
+    },
 
     // SQL Injection
     sqlInjectionTitle: "🔓 SQL Injection Attack",
-    learningProgress: "Learning Progress",
     practiceArea: "💻 Practice Area",
     currentStep: "Current Step",
     examplePayloads: "📋 Example Payload Library",
@@ -129,11 +139,7 @@ const translations = {
     additionalData: "Additional Data",
 
     // Teaching guide
-    learningObjectives: "📚 Learning Objectives",
     vulnerabilityPrinciples: "🔍 Vulnerability Principles",
-    attackPrinciple: "Attack Principle",
-    impact: "Impact",
-    protectionMeasures: "🛡️ Protection Measures",
     practiceSteps: "🎯 Practice Steps",
     practiceTasks: "💪 Practice Tasks",
     task: "Task",
@@ -234,7 +240,49 @@ const translations = {
         description: "Use comments to bypass subsequent conditions",
         difficulty: "beginner"
       }
-    ]
+    ],
+
+    // Knowledge Guide
+    knowledgeGuide: "Knowledge Guide",
+    knowledgeGuideTitle: "📚 Cybersecurity Knowledge Base",
+    selectVulnerability: "Select Vulnerability Type:",
+    vulnerabilityOverview: "Vulnerability Overview",
+    vulnerabilityDescription: "Vulnerability Description",
+    attackPrinciple: "Attack Principle",
+    impact: "Impact",
+    learningObjectives: "🎯 Learning Objectives",
+    protectionMeasures: "🛡️ Protection Measures",
+    realWorldExamples: "🌍 Real World Examples",
+    detectionTechniques: "🔍 Detection Techniques",
+    advancedTechniques: "⚡ Advanced Attack Techniques",
+    practiceRecommendations: "💪 Practice Recommendations",
+    beginnerLevel: "Beginner",
+    intermediateLevel: "Intermediate",
+    advancedLevel: "Advanced",
+    learningResources: "📖 Learning Resources",
+
+    // Practice Challenges
+    practiceChallenges: "Practice Challenges",
+    practiceChallengesTitle: "🏆 Practice Challenges",
+    learningProgress: "Learning Progress",
+    completedChallenges: "Completed Challenges",
+    totalPoints: "Total Points",
+    completionRate: "Completion Rate",
+    startChallenge: "Start Challenge",
+    challengeCompleted: "✅ Completed",
+    completionTime: "Completion Time",
+    description: "Description",
+    objective: "Objective",
+    hints: "💡 Hints",
+    enterSolution: "Enter your solution",
+    submitSolution: "Submit Solution",
+    prerequisites: "Prerequisites",
+    achievements: "🏅 Achievements",
+    firstChallenge: "First Steps",
+    threeChallenges: "Getting Better",
+    allChallenges: "Security Expert",
+    challengeComplete: "🎉 Challenge completed!",
+    challengeFailed: "❌ Challenge not completed, please check your solution"
   },
 
   zh: {
@@ -246,6 +294,7 @@ const translations = {
     xss: "XSS",
     idor: "IDOR",
     commandInjection: "命令注入",
+    ddos: "DDoS",
     secureSearch: "安全搜索",
     welcome: "欢迎",
     warning: "警告",
@@ -284,7 +333,6 @@ const translations = {
     username: "用户名",
     password: "密码",
     role: "角色",
-    description: "说明",
     admin: "管理员",
     user: "普通用户",
     adminDescription: "拥有所有权限，用于测试权限提升",
@@ -348,10 +396,20 @@ const translations = {
       ],
       difficulty: "初级 → 中级"
     },
+    ddosLearningPath: {
+      title: "🌪️ DDoS攻击",
+      description: "学习分布式拒绝服务攻击如何使服务器过载",
+      features: [
+        "理解DDoS攻击原理",
+        "学习不同类型的DDoS攻击",
+        "掌握流量模拟技术",
+        "实践DDoS缓解策略"
+      ],
+      difficulty: "中级 → 高级"
+    },
 
     // SQL Injection
     sqlInjectionTitle: "🔓 SQL注入攻击教学",
-    learningProgress: "学习进度",
     practiceArea: "💻 实践操作区",
     currentStep: "当前步骤",
     examplePayloads: "📋 示例载荷库",
@@ -366,11 +424,7 @@ const translations = {
     additionalData: "额外数据",
 
     // Teaching guide
-    learningObjectives: "📚 学习目标",
     vulnerabilityPrinciples: "🔍 漏洞原理",
-    attackPrinciple: "攻击原理",
-    impact: "危害影响",
-    protectionMeasures: "🛡️ 防护措施",
     practiceSteps: "🎯 实践步骤",
     practiceTasks: "💪 实践任务",
     task: "任务",
@@ -471,7 +525,87 @@ const translations = {
         description: "使用注释绕过后续条件",
         difficulty: "beginner"
       }
-    ]
+    ],
+
+    // Knowledge Guide
+    knowledgeGuide: "知识库",
+    knowledgeGuideTitle: "📚 网络安全知识库",
+    selectVulnerability: "选择漏洞类型：",
+    vulnerabilityOverview: "漏洞概述",
+    vulnerabilityDescription: "漏洞描述",
+    attackPrinciple: "攻击原理",
+    impact: "危害影响",
+    learningObjectives: "🎯 学习目标",
+    protectionMeasures: "🛡️ 防护措施",
+    realWorldExamples: "🌍 真实案例",
+    detectionTechniques: "🔍 检测技术",
+    advancedTechniques: "⚡ 高级攻击技术",
+    practiceRecommendations: "💪 实践建议",
+    beginnerLevel: "初学者",
+    intermediateLevel: "中级",
+    advancedLevel: "高级",
+    learningResources: "📖 学习资源",
+
+    // Practice Challenges
+    practiceChallenges: "实战挑战",
+    practiceChallengesTitle: "🏆 实战挑战",
+    learningProgress: "学习进度",
+    completedChallenges: "已完成挑战",
+    totalPoints: "总积分",
+    completionRate: "完成度",
+    startChallenge: "开始挑战",
+    challengeCompleted: "✅ 已完成",
+    completionTime: "完成时间",
+    description: "描述",
+    objective: "目标",
+    hints: "💡 提示",
+    enterSolution: "输入你的解决方案",
+    submitSolution: "提交解决方案",
+    prerequisites: "前置要求",
+    achievements: "🏅 成就系统",
+    firstChallenge: "初出茅庐",
+    threeChallenges: "渐入佳境",
+    allChallenges: "安全专家",
+    challengeComplete: "🎉 挑战完成！",
+    challengeFailed: "❌ 挑战未完成，请检查你的解决方案",
+
+    // DDoS specific translations
+    ddosAttackControls: "攻击模拟控制",
+    attackType: "攻击类型",
+    trafficRate: "流量速率",
+    requestsPerSec: "请求/秒",
+    startDDoSAttack: "🚀 开始DDoS攻击",
+    stopAttack: "🛑 停止攻击",
+    serverStatus: "服务器状态",
+    attackStatistics: "攻击统计",
+    requestsPerSecond: "请求/秒",
+    totalRequests: "总请求数",
+    bandwidth: "带宽",
+    serverLoad: "服务器负载",
+    normalOperation: "🟢 正常运行",
+    underDDoSAttack: "🔴 遭受DDoS攻击",
+    recovering: "🟡 恢复中",
+    aboutAttack: "关于",
+    howItWorks: "工作原理",
+    ddosProtectionMeasures: "🛡️ 防护措施",
+    rateLimiting: "速率限制",
+    trafficFiltering: "流量过滤",
+    cdnServices: "CDN服务",
+    ddosProtectionServices: "DDoS防护服务",
+    ddosPracticeTasks: "💪 实践任务",
+    understandAttackPatterns: "理解攻击模式",
+    identifyAttackSignatures: "识别攻击特征",
+    testMitigationStrategies: "测试缓解策略",
+    interactiveTutorial: "📚 交互式教程",
+    ddosAttackTutorial: "DDoS攻击教程",
+    normalTrafficFlow: "正常流量",
+    botnetActivation: "僵尸网络激活",
+    trafficFlood: "流量洪水",
+    serviceDegradation: "服务降级",
+    step: "步骤",
+    previous: "← 上一步",
+    next: "下一步 →",
+    startSimulation: "开始模拟"
   }
 };
 

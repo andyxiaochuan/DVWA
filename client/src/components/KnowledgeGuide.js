@@ -129,10 +129,10 @@ function KnowledgeGuide() {
 
   return (
     <div className="knowledge-guide">
-      <h2>📚 网络安全知识库</h2>
+      <h2>{t('knowledgeGuideTitle')}</h2>
       
       <div className="vulnerability-selector">
-        <h3>选择漏洞类型：</h3>
+        <h3>{t('selectVulnerability')}</h3>
         <div className="vuln-buttons">
           {Object.keys(vulnerabilities).map(key => (
             <button
@@ -148,21 +148,21 @@ function KnowledgeGuide() {
 
       <div className="knowledge-content">
         <div className="vuln-overview">
-          <h3>漏洞概述</h3>
+          <h3>{t('vulnerabilityOverview')}</h3>
           <div className="overview-card">
-            <h4>漏洞描述</h4>
+            <h4>{t('vulnerabilityDescription')}</h4>
             <p>{currentVuln.description}</p>
             
-            <h4>攻击原理</h4>
+            <h4>{t('attackPrinciple')}</h4>
             <p>{currentVuln.attackPrinciple}</p>
             
-            <h4>危害影响</h4>
+            <h4>{t('impact')}</h4>
             <p>{currentVuln.impact}</p>
           </div>
         </div>
 
         <div className="learning-objectives">
-          <h3>🎯 学习目标</h3>
+          <h3>{t('learningObjectives')}</h3>
           <ul>
             {currentVuln.learningObjectives.map((objective, index) => (
               <li key={index}>{objective}</li>
@@ -171,7 +171,7 @@ function KnowledgeGuide() {
         </div>
 
         <div className="protection-measures">
-          <h3>🛡️ 防护措施</h3>
+          <h3>{t('protectionMeasures')}</h3>
           <ul>
             {currentVuln.protections.map((protection, index) => (
               <li key={index}>{protection}</li>
@@ -181,14 +181,14 @@ function KnowledgeGuide() {
 
         {currentVuln.realWorldExamples && (
           <div className="real-world-examples">
-            <h3>🌍 真实案例</h3>
+            <h3>{t('realWorldExamples')}</h3>
             <div className="examples-grid">
               {currentVuln.realWorldExamples.map((example, index) => (
                 <div key={index} className="example-card">
                   <h4>{example.title}</h4>
                   <p>{example.description}</p>
                   <div className="impact">
-                    <strong>影响：</strong> {example.impact}
+                    <strong>{t('impact')}：</strong> {example.impact}
                   </div>
                 </div>
               ))}
@@ -198,7 +198,7 @@ function KnowledgeGuide() {
 
         {currentVuln.detectionTechniques && (
           <div className="detection-techniques">
-            <h3>🔍 检测技术</h3>
+            <h3>{t('detectionTechniques')}</h3>
             <ul>
               {currentVuln.detectionTechniques.map((technique, index) => (
                 <li key={index}>{technique}</li>
@@ -209,7 +209,7 @@ function KnowledgeGuide() {
 
         {currentVuln.advancedTechniques && (
           <div className="advanced-techniques">
-            <h3>⚡ 高级攻击技术</h3>
+            <h3>{t('advancedTechniques')}</h3>
             <ul>
               {currentVuln.advancedTechniques.map((technique, index) => (
                 <li key={index}>{technique}</li>
@@ -219,10 +219,10 @@ function KnowledgeGuide() {
         )}
 
         <div className="practice-recommendations">
-          <h3>💪 实践建议</h3>
+          <h3>{t('practiceRecommendations')}</h3>
           <div className="recommendations">
             <div className="recommendation">
-              <h4>初学者</h4>
+              <h4>{t('beginnerLevel')}</h4>
               <ul>
                 <li>从简单的注入测试开始</li>
                 <li>理解基本的攻击原理</li>
@@ -231,7 +231,7 @@ function KnowledgeGuide() {
               </ul>
             </div>
             <div className="recommendation">
-              <h4>中级</h4>
+              <h4>{t('intermediateLevel')}</h4>
               <ul>
                 <li>尝试绕过基本的防护机制</li>
                 <li>学习自动化检测工具</li>
@@ -240,7 +240,7 @@ function KnowledgeGuide() {
               </ul>
             </div>
             <div className="recommendation">
-              <h4>高级</h4>
+              <h4>{t('advancedLevel')}</h4>
               <ul>
                 <li>研究高级绕过技术</li>
                 <li>学习漏洞利用开发</li>
@@ -252,7 +252,7 @@ function KnowledgeGuide() {
         </div>
 
         <div className="resources">
-          <h3>📖 学习资源</h3>
+          <h3>{t('learningResources')}</h3>
           <ul>
             <li><a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">OWASP Top 10</a></li>
             <li><a href="https://portswigger.net/web-security" target="_blank" rel="noopener noreferrer">PortSwigger Web Security Academy</a></li>

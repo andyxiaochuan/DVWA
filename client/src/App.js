@@ -15,6 +15,7 @@ import CommandInjection from './components/CommandInjection';
 import SecureSearch from './components/SecureSearch';
 import KnowledgeGuide from './components/KnowledgeGuide';
 import PracticeChallenges from './components/PracticeChallenges';
+import DDoS from './components/DDoS';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -83,7 +84,7 @@ function App() {
           </div>
         </header>
 
-        <nav className="App-nav">
+          <nav className="App-nav">
           <Link to="/">{t('home')}</Link>
           {!user ? (
             <Link to="/login">{t('login')}</Link>
@@ -93,9 +94,10 @@ function App() {
               <Link to="/xss">{t('xss')}</Link>
               <Link to="/idor">{t('idor')}</Link>
               <Link to="/command-injection">{t('commandInjection')}</Link>
+              <Link to="/ddos">{t('ddos')}</Link>
               <Link to="/secure-search">{t('secureSearch')}</Link>
-              <Link to="/knowledge-guide">知识库</Link>
-              <Link to="/practice-challenges">实战挑战</Link>
+              <Link to="/knowledge-guide">{t('knowledgeGuide')}</Link>
+              <Link to="/practice-challenges">{t('practiceChallenges')}</Link>
             </>
           )}
         </nav>
@@ -108,6 +110,7 @@ function App() {
             <Route path="/xss" element={<XSS />} />
             <Route path="/idor" element={<IDOR />} />
             <Route path="/command-injection" element={<CommandInjection />} />
+            <Route path="/ddos" element={<DDoS />} />
             <Route path="/secure-search" element={<SecureSearch />} />
             <Route path="/knowledge-guide" element={<KnowledgeGuide />} />
             <Route path="/practice-challenges" element={<PracticeChallenges />} />
@@ -160,6 +163,13 @@ function Home() {
       features: t('authLearningPath.features'),
       difficulty: t('authLearningPath.difficulty'),
       path: "/login"
+    },
+    {
+      title: t('ddosLearningPath.title'),
+      description: t('ddosLearningPath.description'),
+      features: t('ddosLearningPath.features'),
+      difficulty: t('ddosLearningPath.difficulty'),
+      path: "/ddos"
     }
   ];
 
